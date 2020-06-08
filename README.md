@@ -41,3 +41,14 @@ These drives were the cheapest 2.5", 7mm height drives with at least a terabyte 
 
 Two boot SSDs and six data drives mean I can run RAIDZ2 in NFS and suffer two drive failures without data loss.
 
+## Memory
+
+A ZFS rule of thumb is to have a gigabyte of ram per terabyte of storage, so having 16GB of RAM gives me room to grow.  I initially bought a single 16GB stick, but it was DOA.  Given the opportunity for further reflection on the motherboard manual, I saw that this board will access two memory sticks in parallel if they're matching sizes.  So two 8GB sticks instead.
+
+## SAS Controller
+
+Here is where life gets interesting.  FreeNAS, being a FreeBSD derivative, is not interested in your cheap-ass $20 SATA controller.  Noo, but it loves these LSI8000-based controllers, such as the LSI 9211-8i that you can get on Ebay for (drum roll) $25.  They come in a lot of shapes and sizes, the most commonly used are branded IBM or Dell.  The key is that it should be based on the LSI8000 controller CPU and should have two SAS ports.  With two SAS ports, I can use SAS-to-SATA expander cables to support up to eight SATA drives.
+
+These controllers as shipped are set up to do hardware RAID, but I want to do everything in software through the magic of ZFS.  One advantage of that is if the motherboard or controller dies, I can stick these drives in a completely different machine and the ZFS pool will be perfectly usable.  The thing is, they need firmware flashing in order to put them in "IT" mode.
+
+You need the following tools from the Broadcom (nee Avago nee Broadcom nee LSI) support website at https://www.broadcom.com/products/storage/host-bus-adapters/sas-9210-8i
