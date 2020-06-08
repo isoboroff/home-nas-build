@@ -51,7 +51,7 @@ Here is where life gets interesting.  FreeNAS, being a FreeBSD derivative, is no
 
 These controllers as shipped are set up to do hardware RAID, but I want to do everything in software through the magic of ZFS.  One advantage of that is if the motherboard or controller dies, I can stick these drives in a completely different machine and the ZFS pool will be perfectly usable.  The thing is, they need firmware flashing in order to put them in "IT" mode.
 
-You need the following tools.  I recommend the LSI-9211-8i.zip archive from https://techmattr.wordpress.com/2016/04/11/updated-sas-hba-crossflashing-or-flashing-to-it-mode-dell-perc-h200-and-h310/, but if you need to you can also get them from the Broadcom (nee Avago nee Broadcom nee LSI) support website at https://www.broadcom.com/products/storage/host-bus-adapters/sas-9210-8i:
+You need the following tools.  I recommend the LSI-9211-8i.zip archive from https://techmattr.wordpress.com/2016/04/11/updated-sas-hba-crossflashing-or-flashing-to-it-mode-dell-perc-h200-and-h310/.  I have a smaller version in this repo, without Windows drivers or old firmware versions that I didn't need.  If you need to you can also get them from the Broadcom (nee Avago nee Broadcom nee LSI) support website at https://www.broadcom.com/products/storage/host-bus-adapters/sas-9210-8i:
 
 1. EFI Installer (`sas2flash.efi`): `Installer_P20_for_UEFI.zip`
 1. P9 old firmware: `9210_8i_Package_for_P9_IR_IT_Firmware_BIOS_Upgrade_on_MSDOS_and_Windows.zip`
