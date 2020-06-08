@@ -51,4 +51,10 @@ Here is where life gets interesting.  FreeNAS, being a FreeBSD derivative, is no
 
 These controllers as shipped are set up to do hardware RAID, but I want to do everything in software through the magic of ZFS.  One advantage of that is if the motherboard or controller dies, I can stick these drives in a completely different machine and the ZFS pool will be perfectly usable.  The thing is, they need firmware flashing in order to put them in "IT" mode.
 
-You need the following tools from the Broadcom (nee Avago nee Broadcom nee LSI) support website at https://www.broadcom.com/products/storage/host-bus-adapters/sas-9210-8i
+You need the following tools from the Broadcom (nee Avago nee Broadcom nee LSI) support website at https://www.broadcom.com/products/storage/host-bus-adapters/sas-9210-8i:
+
+1. EFI Installer (`sas2flash.efi`): `Installer_P20_for_UEFI.zip`
+1. P9 old firmware: `9210_8i_Package_for_P9_IR_IT_Firmware_BIOS_Upgrade_on_MSDOS_and_Windows.zip`
+1. P20 current firmware: `9210-8i_Package_P20_IR_IT_FW_BIOS_for_MSDOS_Windows.zip`
+
+Again, because my motherboard is UEFI only, I will not get into how to flash your board from DOS.  You will need to unzip these tools onto a USB key, formatted MSDOS.
