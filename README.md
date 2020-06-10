@@ -12,6 +12,7 @@ The design goals were to stay under $1000, support at least 4TB of reliable stor
 1. 6x Seagate FireCuda Gaming SSHD 1TB SATA 2.5" drive (ST1000LX015)
 1. 2x 8GB PC-19200 DDR4 SODIMM DRAM
 1. Dell PERC H200 SAS controller
+1. 2x SFF-8087 SAS to 4x SATA forward breakout cables
 
 ## Case
 
@@ -67,3 +68,6 @@ The steps are:
 1. Write the SAS address back onto the board.
 1. Enjoy.
 
+## SAS to SATA breakout cables
+
+I wanted to connect the two SAS connectors on the controller to breakout cables to support 8 SATA drives.  There are two kinds of SAS breakout cables: *forward* and *reverse*.  For this project, you need forward cables.  If you have reverse cables, the controller won't see the drives at all.  There does not seem to be any external way to tell the difference between forward and reverse SAS breakout cables, which is a little frustrating.  I initially got reverse cables, and the vendor was nice enough to swap them when I figured out why they weren't working.
